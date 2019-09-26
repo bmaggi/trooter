@@ -1,0 +1,16 @@
+{
+  "name": "vt-trooter",
+  "description": "",
+  "scripts": {},
+  "env": {
+  },
+  "formation": {},
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
