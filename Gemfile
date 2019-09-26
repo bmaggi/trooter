@@ -33,6 +33,8 @@ group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   # Static code analyzer and formatter
   gem "rubocop-rails", "~> 2.2", require: false
+  # Rubocop extension for RSpec-specific analysis
+  gem "rubocop-rspec", "~> 1.34", require: false
 end
 
 group :development do
@@ -42,6 +44,17 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+end
+
+group :test do
+  # Set of strategies for cleaning your database
+  gem "database_cleaner", "~> 1.7", require: false
+  # Fixtures replacement
+  gem "factory_bot_rails", "~> 5.0.2", require: false
+  # Testing framework
+  gem "rspec-rails", "~> 3.8.2", require: false
+  # Code coverage analysis tool
+  gem "simplecov", "~> 0.17.0", require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

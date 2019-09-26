@@ -1,5 +1,6 @@
 require:
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   TargetRubyVersion: 2.6
@@ -55,6 +56,20 @@ Naming/PredicateName:
 
 Rails:
   Enabled: true
+
+RSpec/DescribeClass:
+  Exclude:
+    - "spec/requests/**/*.rb"
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/LetSetup:
+  Exclude:
+    - "spec/requests/**/*.rb"
+
+RSpec/MultipleExpectations:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false
