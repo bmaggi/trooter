@@ -3,10 +3,20 @@
   "description": "",
   "scripts": {},
   "env": {
+    "APP_HOST": {
+      "required": true
+    },
+    "SENDGRID_PORT": {
+      "required": true
+    },
+    "SENDGRID_SERVER": {
+      "required": true
+    }
   },
   "formation": {},
   "addons": [
-    "heroku-postgresql"
+    "heroku-postgresql",
+    "sendgrid"
   ],
   "buildpacks": [
     {
