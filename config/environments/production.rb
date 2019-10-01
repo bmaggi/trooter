@@ -70,11 +70,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-    user_name: ENV.fetch("SMTP_USERNAME"),
-    password: ENV.fetch("SMTP_PASSWORD"),
+    user_name: ENV.fetch("SENDGRID_USERNAME"),
+    password: ENV.fetch("SENDGRID_PASSWORD"),
     domain: ENV.fetch("APP_HOST"),
-    address: ENV.fetch("SMTP_SERVER"),
-    port: ENV.fetch("SMTP_PORT"),
+    address: ENV.fetch("SENDGRID_SERVER"),
+    port: ENV.fetch("SENDGRID_PORT"),
     authentication: :plain,
     enable_starttls_auto: true
   }
