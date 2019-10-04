@@ -1,24 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container my-5">
 
-<% if user_signed_in? %>
-  <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Connexion", new_user_session_path %>
-<% end %>
+  <% if notice %>
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <% end %>
 
+  <div class="row">
+    <div class="col-lg-3 mb-5 mb-lg-0">
+      <%= render "action_card" %>
+    </div>
 
-<h1>Messages</h1>
-
-<% @messages.each do |message| %>
-  <div class="mb-5">
-    <div><%= message.content %></div>
-    <% if user_signed_in? %>
-      <div>
-        <%= link_to 'Edit', edit_message_path(message) %>
-        <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-    <% end %>
+    <div class="col-lg-9">
+      <% @messages.each do |message| %>
+        <%= render "message", message: message %>
+      <% end %>
+    </div>
   </div>
-<% end %>
 
-<%= link_to 'New Message', new_message_path %>
+
+</div>
+
+

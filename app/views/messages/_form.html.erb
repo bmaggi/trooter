@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_field :content, class: "form-control" %>
+    <small id="emailHelp" class="form-text text-muted">Soyez gentils !</small>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="d-flex justify-content-end">
+    <%= link_to "Annuler", messages_path, class: "btn btn-outline-danger border-0 mr-3", data: { confirm: 'Êtes-vous sûr ?' } %>
+    <%= form.submit(class: "btn btn-primary") %>
   </div>
 <% end %>
