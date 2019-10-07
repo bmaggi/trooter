@@ -1,0 +1,15 @@
+<div class="container my-5">
+
+  <div class="display-1 text-white mb-5">Top news !</div>
+
+  <div class="row">
+    <div class="col-12">
+      <% @articles.each do |article| %>
+        <%= render "article_list_entry", article: article %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
