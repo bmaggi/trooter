@@ -1,0 +1,25 @@
+<div class="container my-5">
+
+  <div class="display-1 text-white mb-5">Analytics</div>
+
+  <div class="card card-shadow mb-4 p-3">
+    <div class="row">
+      <% @articles.each do |article| %>
+        <div class="col-12 pb-5">
+          <div class="display-4 pb-3"><%= article.title %></div>
+          <div class="progress story-progress">
+            <div class="progress-bar bg-success"
+                 role="progressbar"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 style="width: <%= @analytics["choices"][article.id.to_s] %>%"
+            ></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+

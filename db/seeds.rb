@@ -1,13 +1,20 @@
 # frozen_string_literal: true
 
-user = User.create!(
+user_1 = User.create!(
   email: "first@example.com",
   password: "password",
   password_confirmation: "password")
 
-Message.create!(content: "Salut a tous ! Voici mon 1er troot ! Bien ?! T'as vu ! Gavé stylé !", author: user)
+user_2 = User.create!(
+  email: "second@example.com",
+  password: "password",
+  password_confirmation: "password")
 
-Article.create!(
+Message.create!(content: "Salut a tous ! Voici mon 1er troot ! Bien ?! T'as vu ! Gavé stylé !", author: user_1)
+
+Message.create!(content: "Moi, j'adore les licornes <3", author: user_2)
+
+math = Article.create!(
   title: "Les réponses du prochain devoir de maths",
   body: <<~BODY
     Exercice 1:
@@ -28,7 +35,7 @@ Article.create!(
 BODY
 )
 
-Article.create!(
+shrimp = Article.create!(
   title: "La migration des crevettes grises",
   body: <<~BODY
     Le nom vernaculaire crevette est traditionnellement donné à un ensemble de crustacés aquatiques, essentiellement marins mais aussi dulcicoles, autrefois regroupés dans le sous-ordre des « décapodes nageurs », ou Natantia.
@@ -49,3 +56,7 @@ Article.create!(
     <b class="text-danger">IL-LÉ-GAL !</b>
 BODY
 )
+
+ArticleChoice.create!(user: user_1, article: math)
+ArticleChoice.create!(user: user_1, article: shrimp)
+ArticleChoice.create!(user: user_2, article: shrimp)
