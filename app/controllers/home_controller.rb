@@ -4,6 +4,6 @@ class HomeController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.eager_load(:author).order(updated_at: :desc).all
   end
 end
