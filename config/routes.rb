@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   resources :messages, only: %i[new create edit update delete destroy]
 
+  resources :articles, only: %i[index show]
+
+  resources :analytics, only: %i[index]
+
   get "*path", to: redirect("/")
 end

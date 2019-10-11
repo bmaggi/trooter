@@ -1,0 +1,14 @@
+<div class="card card-shadow mb-4 p-3">
+  <div class="d-flex flex-row mb-3">
+    <span class="flex-grow align-self-center article-title flex-grow-1"><%= article.title %></span>
+  </div>
+
+  <div class="mb-2">
+    <%= article.body.html_safe %>
+  </div>
+
+  <div>
+    <small class="text-muted"><%= article.updated_at %></small>
+  </div>
+
+</div>
