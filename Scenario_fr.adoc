@@ -1,0 +1,78 @@
+= Atelier Développement Agile Trooter
+
+Présentation du développement agile par un jeu de rôle et démonstration autour de l'application _Trooter_.
+
+*Durée 20 min.*
+
+== Mise en place
+
+* Cloner le repo https://github.com/ValentinTrinque/trooter[trooter]
+* Avoir accès à Heroku pour le déploiement de l'app
+* 2 _acteurs_ : 
+ ** le https://www.scrum.org/resources/what-is-a-product-owner[Product Owner]
+ ** l'équipe de developeurs 
+ 
+== Scénario
+
+*Contexte :*
+_"Le CE0 veut concurrencer Facebook et lancer un nouveau réseau social pour les jeunes, il a décidé le nom... Trooter un réseau pour poster des troots entre amis"_
+
+*Itération 1*:
+
+* PO : _"Il faudrait pouvoir poster des messages sur l'application"_
+* DEV : _"Ok on bosse dessus"_
+
+*Itération 2*:
+
+* DEV :
+** `git switch feature/post-messages && yarn install --check-files && rails s`
+** Démo de l'interface avec des messages
+* PO : _"C'est super mais c'est pas joli, il faudrait ajouter de la couleur du vert"_
+
+*Itération 3:*
+
+* DEV :
+** `body { background-color: #247e21 }`
+** Démo de l'application en vert
+* PO : _"C'est super j'aime bien", "j'ai invité des futurs utilisateurs qu'en pensez-vous?"_
+* Utilisateurs: _"C'est moche"_ (le design en vert est fait pour être moche)
+* PO : _"Mince j'aurais dû demander aux utilisateurs avant. J'envoie à l'équipe de dev le nouveau design voulu cet après-midi"_
+
+*Itération 4:*
+
+* DEV :
+** `git switch feature/better-ui && yarn install --check-files && rails s`
+** Démo de la belle UI
+* PO : _"C'est magnifique le CEO a donné le go pour le lancement de la béta !"_
+* PO (aux utilisateurs) : _"Est-ce que ça vous plairait d'avoir des images en plus sur le site, et des articles sur les sujets qui vous intéressent?"_
+* Utilisateurs : _"Oui"_
+=> Retour utilisateur on veut des articles (avec des images)
+
+*Itération 5*:
+
+* DEV :
+** Démo du déploiement de l'application sur https://www.heroku.com/[Heroku]
+** `git switch feature/analytics && yarn install --check-files && rails s`
+** Explication rapide des environnements différents stagging/prod
+** Démo des pages web avec les articles
+* PO : _"On a justement nos béta testeurs avec nous, on va leur demander d'aller sur l'application"_
+** Les utilisateurs vont sur le site
+* PO : _"Ce que je voudrais c'est avoir les stats sur le site pour connaitre mes utilisateurs"_
+
+*Itération 6*
+
+* DEV :
+** Démo de la page des statistiques
+* PO : _"Félicitation à l'équipe de dev les CEO est très content on va pouvoir lancer une campagne de promotion mondiale pour le site"_
+
+== Notes
+
+Ce scénario met en avant:
+
+* l'agilité
+ ** travail par itération
+ ** réactivité face aux changements
+* différentes phases de maturité dans le pilotage d'un produit
+** intuition du Product Owner ou du Product Manager
+** analyse des retours utilisateurs 
+** mesure des actions faites par les utilisateurs 
